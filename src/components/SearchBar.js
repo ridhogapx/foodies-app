@@ -14,7 +14,7 @@ class SearchBar extends HTMLElement {
 						<div class="card shadow">
 						  <div class="card-body">
 								  <div class="mb-3">
-								    <label for="${this.label}" class="form-label">${this.label}</label>
+								    <label for="${this.label}" class="form-label fs-4">${this.label}</label>
 								    <input type="text" class="form-control" id="searchInput" placeholder="${this.placeholder}">
 								    <div class="form-text">Ex: Arrabiata</div>
 								  </div>

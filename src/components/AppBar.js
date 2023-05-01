@@ -14,7 +14,7 @@ class AppBar extends HTMLElement {
 			    <img src="${img}" class="me-2">${this.caption}</a>
 			  </div>
 			</nav>
-		`
+		`;
 	}
 }
 
