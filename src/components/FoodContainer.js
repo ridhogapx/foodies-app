@@ -7,7 +7,9 @@ class FoodContainer extends HTMLElement {
 		this.innerHTML = `
 			<div class="container">
 				<div class="row">
-					<div id="item"></div>
+					<div class="col">
+						<div id="foodItem"></div>
+					</div>
 				</div>
 			</div>
 		`

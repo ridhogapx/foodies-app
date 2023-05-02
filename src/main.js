@@ -20,11 +20,17 @@ Todo:
  
 */
 
+const foodItem = document.getElementById('foodItem');
 
 const someMenus = async() => {
 	const response = await axios.get('https://www.themealdb.com/api/json/v1/1/search.php?f=c');
-	const meals = await response.data;
-	console.log(meals)
+	const meals = await response.data.meals;
+	meals.forEach(result => {
+		const foodContent = document.createElement('food-content');
+		foodContent.content = result;
+
+		foodItem.append(foodContent);
+	})
 }
 
 someMenus();
