@@ -1,6 +1,8 @@
 // Static
+import 'jquery/dist/jquery.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
+
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 
 // Axios as HTTP Request
@@ -13,12 +15,13 @@ import './components/SectionTitle.js';
 import './components/FoodContainer.js';
 import './components/FoodContent.js';
 import './components/SpinnerComponent.js';
+import './components/MessageComponent.js';
 
 /* 
 Todo:
-1. Making section for data menu
-2. Logic input and search data API
- 
+1. Making section for data menu (Done).
+2. Logic input and search data API (Done).
+3. Adding Error message.
 */
 
 // API URL for search data https://www.themealdb.com/api/json/v1/1/search.php?s=
@@ -50,6 +53,7 @@ const someMenus = async() => {
 const searchAction = () => {
 	const searchInput = document.getElementById('searchInput');
 	const searchButton = document.getElementById('searchBtn')
+	const message = document.querySelector('message-component');
 
 	/*
 		Suppose adding spinner and delete DOM if input value is not empty.
@@ -60,6 +64,10 @@ const searchAction = () => {
 		if(e.target.value !== '') {
 			foodItem.innerHTML = '';
 			foodItem.append(spinner);
+			
+			message.querySelector('#cardMsg').classList.remove('visually-hidden');
+			message.setAttribute('message', '');
+			
 		} else {
 			someMenus();
 		}
@@ -83,7 +91,9 @@ const searchAction = () => {
 					foodItem.append(foodContent);
 				})
 				} else {
-					alert("The food or drink that you looking for is not available")
+					// alert("The food or drink that you looking for is not available")
+					message.setAttribute('message', 'The food or drink that you looking for is not available');
+					message.querySelector('#cardMsg').classList.toggle('visually-hidden');
 				}
 			}).catch(err => {
 				alert(err);
@@ -96,6 +106,9 @@ const searchAction = () => {
 }
 
 
+
 searchAction();
 someMenus();
+
+
 
