@@ -1,5 +1,3 @@
-import './FoodContent.js';
-
 class FoodContainer extends HTMLElement {
 	connectedCallback() {
 		this.render();
