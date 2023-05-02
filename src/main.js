@@ -51,6 +51,11 @@ const searchAction = () => {
 	const searchInput = document.getElementById('searchInput');
 	const searchButton = document.getElementById('searchBtn')
 
+	/*
+		Suppose adding spinner and delete DOM if input value is not empty.
+		If value input is empty then it will call API again.
+
+ 	*/
 	searchInput.addEventListener('input', (e) => {
 		if(e.target.value !== '') {
 			foodItem.innerHTML = '';
@@ -61,10 +66,24 @@ const searchAction = () => {
 	})
 
 	searchButton.addEventListener('click', (e) => {
+
 		axios.get(`${API_URL}s=${searchInput.value}`)
 			.then(res => {
-				let response = res.data;
-				console.log(response);
+				spinner.remove();
+				const response = res.data.meals;
+				response.forEach(result => {
+					const foodContent = document.createElement('food-content');
+					foodContent.content = result;
+
+					foodContent.classList.add('col-md-4')
+					foodContent.classList.add('my-3')
+					foodContent.setAttribute('food-data', result.idMeal);
+
+					foodItem.append(foodContent);
+				})
+			}).catch(err => {
+				alert(err);
+				console.log(err);
 			})
 	})
 
