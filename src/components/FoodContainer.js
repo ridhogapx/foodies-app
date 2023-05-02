@@ -9,7 +9,7 @@ class FoodContainer extends HTMLElement {
 				<div class="row justify-content-center" id="foodItem">
 				</div>
 			</div>
-		`
+		`;
 	}
 }
 

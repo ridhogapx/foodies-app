@@ -12,6 +12,7 @@ import './components/SearchBar.js';
 import './components/SectionTitle.js';
 import './components/FoodContainer.js';
 import './components/FoodContent.js';
+import './components/SpinnerComponent.js';
 
 /* 
 Todo:
@@ -21,19 +22,27 @@ Todo:
 */
 
 const foodItem = document.getElementById('foodItem');
+const spinner = document.createElement('spinner-component');
+
 
 const someMenus = async() => {
+	foodItem.append(spinner);
 	const response = await axios.get('https://www.themealdb.com/api/json/v1/1/search.php?f=c');
 	const meals = await response.data.meals;
 	meals.forEach(result => {
+		spinner.remove();
 		const foodContent = document.createElement('food-content');
 		foodContent.content = result;
 
 		foodContent.classList.add('col-md-4')
 		foodContent.classList.add('my-3')
+		foodContent.setAttribute('food-data', result.idMeal);
 
 		foodItem.append(foodContent);
 	})
 }
 
+
+
 someMenus();
+
