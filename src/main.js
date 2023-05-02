@@ -21,6 +21,9 @@ Todo:
  
 */
 
+const API_URL = 'www.themealdb.com/api/json/v1/1/search.php?s=';
+
+
 const foodItem = document.getElementById('foodItem');
 const spinner = document.createElement('spinner-component');
 
@@ -42,6 +45,9 @@ const someMenus = async() => {
 	})
 }
 
+const searchAction = () => {
+	// TODO: Gotta finish this soon...
+}
 
 
 someMenus();
