@@ -6,10 +6,7 @@ class FoodContainer extends HTMLElement {
 	render() {
 		this.innerHTML = `
 			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div id="foodItem"></div>
-					</div>
+				<div class="row justify-content-center" id="foodItem">
 				</div>
 			</div>
 		`

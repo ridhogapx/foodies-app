@@ -29,6 +29,9 @@ const someMenus = async() => {
 		const foodContent = document.createElement('food-content');
 		foodContent.content = result;
 
+		foodContent.classList.add('col-md-4')
+		foodContent.classList.add('my-3')
+
 		foodItem.append(foodContent);
 	})
 }
