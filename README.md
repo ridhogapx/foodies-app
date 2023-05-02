@@ -1,6 +1,6 @@
 # foodies-app
 Hotto futo. An app that will help you finding any meals around the world!
-What can this app doing? It can listing the foods and drinks that. Also, with search feature, you can find specified food and drink based the keyword
+What can this app doing? It can listing the foods and drinks. Also, with search feature, you can find specified food and drink based the keyword
 
 # Quick Usage
 Simply clone this repo. After that run command "npm run start-dev" to start development server. If you have "http-server" installed on your global npm, then simply run "http-server dist". Or just visit the website https://foodies-app-176ba.web.app/
@@ -16,5 +16,6 @@ You can support their works by paying 2$ in their Paypal to use all exclusive fe
 # Future Todo?
   - Migration to Typescript.
   - Making my own API ???
+  - Improve UI 
 
 
