@@ -21,7 +21,8 @@ import './components/MessageComponent.js';
 Todo:
 1. Making section for data menu (Done).
 2. Logic input and search data API (Done).
-3. Adding Error message.
+3. Adding Error message. (Done)
+4. Build into production (Done)
 */
 
 // API URL for search data https://www.themealdb.com/api/json/v1/1/search.php?s=
@@ -64,7 +65,7 @@ const searchAction = () => {
 		if(e.target.value !== '') {
 			foodItem.innerHTML = '';
 			foodItem.append(spinner);
-			
+
 			message.querySelector('#cardMsg').classList.remove('visually-hidden');
 			message.setAttribute('message', '');
 			
