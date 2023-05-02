@@ -69,9 +69,10 @@ const searchAction = () => {
 
 		axios.get(`${API_URL}s=${searchInput.value}`)
 			.then(res => {
-				spinner.remove();
-				const response = res.data.meals;
-				response.forEach(result => {
+				
+				if(res.data.meals) {
+					const response = res.data.meals;
+					response.forEach(result => {
 					const foodContent = document.createElement('food-content');
 					foodContent.content = result;
 
@@ -81,9 +82,13 @@ const searchAction = () => {
 
 					foodItem.append(foodContent);
 				})
+				} else {
+					alert("The food or drink that you looking for is not available")
+				}
 			}).catch(err => {
 				alert(err);
-				console.log(err);
+			}).finally(() => {
+				spinner.remove();
 			})
 	})
 
