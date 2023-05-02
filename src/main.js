@@ -10,7 +10,7 @@ import axios from 'axios';
 import './components/AppBar.js';
 import './components/SearchBar.js';
 import './components/SectionTitle.js';
-
+import './components/FoodContainer.js';
 /* 
 Todo:
 1. Making section for data menu

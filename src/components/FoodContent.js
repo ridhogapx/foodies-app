@@ -19,4 +19,4 @@ class FoodContent extends HTMLElement {
 	}
 }
 
-customElemnts.define('food-content', FoodContent);
+customElements.define('food-content', FoodContent);
