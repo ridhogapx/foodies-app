@@ -8,7 +8,7 @@ Simply clone this repo. After that run command "npm run start-dev" to start deve
 # API Docs
 Special thanks for TheMealDB for letting me use their API. You can read their documentation in https://www.themealdb.com/api.php.
 Here is the list endpoint API:
-  - Search meal by name: https://www.themealdb.com/api/json/v1/1/search.php?s={{ your keyword}}
+  - Search meal by name, in this example we will lookup a list food that contains keyword "chicken" : https://www.themealdb.com/api/json/v1/1/search.php?s=chicken
   - List all meals by first letter, in this example we using 'a' as first letter keyword: https://www.themealdb.com/api/json/v1/1/search.php?f=a
   - etc
 You can support their works by paying 2$ in their Paypal to use all exclusive feature
