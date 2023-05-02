@@ -18,7 +18,7 @@ class SearchBar extends HTMLElement {
 								    <input type="text" class="form-control" id="searchInput" placeholder="${this.placeholder}">
 								    <div class="form-text">Ex: Arrabiata</div>
 								  </div>
-								  <button class="btn shadow" style="background-color: #F97B22; color: #fff">Search</button>
+								  <button class="btn shadow" id="searchBtn" style="background-color: #F97B22; color: #fff">Search</button>
 						  </div>
 						</div>
 					</div>

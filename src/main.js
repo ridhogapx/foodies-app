@@ -21,7 +21,9 @@ Todo:
  
 */
 
-const API_URL = 'www.themealdb.com/api/json/v1/1/search.php?s=';
+// API URL for search data https://www.themealdb.com/api/json/v1/1/search.php?s=
+
+const API_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?';
 
 
 const foodItem = document.getElementById('foodItem');
@@ -46,9 +48,30 @@ const someMenus = async() => {
 }
 
 const searchAction = () => {
-	// TODO: Gotta finish this soon...
+	const searchInput = document.getElementById('searchInput');
+	const searchButton = document.getElementById('searchBtn')
+
+	searchInput.addEventListener('input', (e) => {
+		if(e.target.value !== '') {
+			foodItem.innerHTML = '';
+			foodItem.append(spinner);
+		} else {
+			someMenus();
+		}
+	})
+
+	searchButton.addEventListener('click', (e) => {
+		axios.get(`${API_URL}s=${searchInput.value}`)
+			.then(res => {
+				let response = res.data;
+				console.log(response);
+			})
+	})
+
+
 }
 
 
+searchAction();
 someMenus();
 
